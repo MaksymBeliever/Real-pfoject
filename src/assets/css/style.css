@@ -1818,6 +1818,54 @@ textarea:focus {
   }
 }
 
+.scroll-up {
+  position: fixed;
+  right: 50px;
+  bottom: 50px;
+  z-index: 1000;
+  width: 65px;
+  height: 65px;
+  color: #dcdcdc;
+  cursor: pointer;
+  visibility: hidden;
+  border-radius: 50px;
+  box-shadow: inset 0 0 0 4px #dcdcdc;
+  opacity: 0;
+  transition: .2s;
+  transform: translateY(25px);
+}
+
+.scroll-up::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  font-size: 20px;
+  content: '↑';
+}
+
+.scroll-up:hover {
+  color: #065780;
+}
+
+.scroll-up--active {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.scroll-up__svg-path {
+  box-sizing: border-box;
+  fill: none;
+  stroke: #065780;
+  stroke-width: 4px;
+  transition: .2s;
+}
+
 /* small devices, tablets */
 @media only screen and (max-width: 768px) {
   .animated {
